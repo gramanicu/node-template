@@ -1,6 +1,6 @@
 /* eslint-disable prefer-const */
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client'
 
-let prisma = new PrismaClient();
+let prisma = new PrismaClient()
 
-export default prisma;
+export default prisma
