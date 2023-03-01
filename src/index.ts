@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 import * as dotenv from 'dotenv';
 dotenv.config();
 
@@ -11,7 +12,7 @@ import { redis } from '@lib/redis';
 import prisma from '@lib/prisma';
 
 if (!HTTP_PORT) {
-    process.exit(1);
+  process.exit(1);
 }
 
 const httpServer = express();
@@ -23,13 +24,13 @@ httpServer.use('/', router);
 httpServer.use(errorMiddleware);
 
 httpServer.listen(HTTP_PORT, () => {
-    console.log(`Started server on port ${HTTP_PORT}`);
+  console.log(`Started server on port ${HTTP_PORT}`);
 });
 
 redis.connect(() => {
-    console.log('Server connected to Redis');
+  console.log('Server connected to Redis');
 });
 
 prisma.$connect().then(() => {
-    console.log('Server connected to Database');
+  console.log('Server connected to Database');
 });
