@@ -19,7 +19,7 @@ services:
       - db
       - redis
     healthcheck:
-      test: wget http://localhost:${HTTP_PORT} || exit 1
+      test: wget -nv -O /dev/null http://localhost:${HTTP_PORT} || exit 1
       interval: 1m
       timeout: 10s
       retries: 3
