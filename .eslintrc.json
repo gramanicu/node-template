@@ -1,16 +1,36 @@
 {
   "env": {
     "browser": false,
-    "es2021": true
+    "es2021": true,
+    "node": true
   },
-  "extends": ["standard", "prettier"],
+  "extends": [
+    "standard",
+    "plugin:markdown/recommended",
+    "plugin:yml/standard"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "overrides": [
+      {
+        "files": [
+          "*.yaml",
+          "*.yml"
+        ],
+        "parser": "yaml-eslint-parser"
+      }
+    ]
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint",
+    "json-format"
+  ],
   "rules": {
-    "indent": ["error", 2]
+    "indent": [
+      "error",
+      2
+    ]
   }
 }

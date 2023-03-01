@@ -1,6 +1,5 @@
 {
   "ts-node": {
-    // these options are overrides used only by ts-node
     "compilerOptions": {
       "module": "commonjs",
       "strict": true
@@ -24,12 +23,25 @@
     "rootDir": "src",
     "baseUrl": ".",
     "paths": {
-      "@lib/*": ["src/lib/*"],
-      "@middlewares/*": ["src/middlewares/*"],
-      "@routes/*": ["src/routes/*"],
-      "@controllers/*": ["src/controllers/*"]
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@middlewares/*": [
+        "src/middlewares/*"
+      ],
+      "@routes/*": [
+        "src/routes/*"
+      ],
+      "@controllers/*": [
+        "src/controllers/*"
+      ]
     }
   },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

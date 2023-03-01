@@ -1,4 +1,4 @@
-import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
+import { ErrorRequestHandler, NextFunction, Request, Response } from 'express'
 
 const errorMiddleware = (
   err: ErrorRequestHandler,
@@ -6,7 +6,7 @@ const errorMiddleware = (
   res: Response,
   next: NextFunction
 ) => {
-  next(err);
-};
+  next(err)
+}
 
-export default errorMiddleware;
+export default errorMiddleware
