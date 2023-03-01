@@ -20,9 +20,10 @@ services:
       - redis
     healthcheck:
       test: wget http://localhost:${HTTP_PORT} || exit 1
-      interval: 5m
+      interval: 1m
       timeout: 10s
       retries: 3
+      start_period: 15s
 
   db:
     container_name: node-template-database
@@ -46,9 +47,10 @@ services:
       - POSTGRES_DB=${DB_NAME}
     healthcheck:
       test: pg_isready
-      interval: 5m
+      interval: 1m
       timeout: 5s
       retries: 5
+      start_period: 15s
 
   redis:
     container_name: node-template-redis
@@ -64,9 +66,10 @@ services:
       - REDIS_PASSWORD=${REDIS_PASSWORD}
     healthcheck:
       test: redis-cli ping
-      interval: 5m
+      interval: 1m
       timeout: 5s
       retries: 5
+      start_period: 15s
 
 networks:
   node-template-network:
